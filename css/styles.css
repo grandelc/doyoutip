@@ -1,0 +1,249 @@
+/***************************************
+		Do You Tip Styles
+September '14
+Authors:
+  ___  _|_      _      ____   _|_ 
+ / __)/ |_)   _| |_   (  _ \ / |_)
+( (_-.\_| \  (_   _)   )(_) )\_| \
+ \___/(_|_/    |_|    (____/ (_|_/©
+INDEX:
+	1.0 General
+	2.0 Fonts
+	3.0 Layout
+		3.1 Job Box Layout
+		3.2 Job Box drop down stats & Choose
+	FOOTER	
+
+***************************************/
+
+/***************************************
+	1.0 General --- GROUP NEEDS TO BE ADDED TO #Content
+***************************************/
+
+
+@import url(http://fonts.googleapis.com/css?family=Fugaz+One|Open+Sans:400italic,800italic,700,800,400);
+
+* { 
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+.group:after {                         
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+
+body{
+	/*background-color: #629DF3;*/
+	width: 100%;
+}
+
+#wrapper{
+	width: 90%;
+	margin: auto;
+}
+
+/***************************************
+	2.0 Fonts
+
+font-family: 'Fugaz One', cursive;
+font-family: 'Open Sans', sans-serif;
+
+***************************************/
+
+h1, h2 {
+	font-family: 'Fugaz One', cursive;
+	color: #FFC158;
+}
+
+
+h1 {
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+
+p, ul{
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+}
+
+#net{
+	font-size: 43px;
+	color: #0363F0;
+}
+
+.italics{
+	font-style: italic;
+}
+
+
+/***************************************
+	3.0 Layout
+***************************************/
+header{
+	margin:50px 0;
+	border-bottom: 1px solid black;
+	padding-bottom: 15px;
+}
+
+#content h2{
+	margin-bottom: 20px; 
+}
+
+#content > p{
+	line-height: 1.5em;
+	color: black;
+}
+
+
+#content{
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+#col-left, #col-right{
+	width: 50%;
+	margin-bottom: 30px;
+}
+
+#col-left{
+	float: left;
+}
+
+#col-right{
+	float: right;
+}
+
+		/***************************************
+				3.1 Job Box Layout
+		***************************************/
+
+
+.job-box{
+	width: 50%;
+	height: auto;
+	border: 1px solid black;
+	margin: 20px auto;
+	background-color: #FFAA19;
+	cursor: pointer;
+}
+
+
+
+.job-title{
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	font-style: italic;
+	/*text-decoration: underline;*/
+}
+
+.job-box-click{
+	padding: 30px 0;
+}
+
+		/***************************************
+		  3.2 Job Box drop down stats & Choose
+		***************************************/
+.job-stats{
+	text-align: center;
+}
+
+.percent{
+	font-size: 6em;
+	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.job-stats form  {
+	/*margin-bottom: 30px;*/
+}
+
+.tip{
+	margin-bottom: 5px;
+}
+
+.tip-text{
+	font-size: 2em;
+	margin-top: 10px;
+	color: black;
+}
+
+.tip-stats{
+	border: 1px solid black;
+	padding: 10px;
+	width: 90%;
+	margin: auto;
+
+}
+
+
+.tip-choose{
+	margin-top: 30px;
+}
+
+.choose{
+	width: 100%;
+	height: 50px;
+	font-size: 1.5em;
+	font-weight: bold;
+	/*text-decoration: underline;*/
+	background: #629DF3;
+	border: 1px solid black;
+	cursor: pointer;
+	color: white;
+	font-family: 'Fugaz One', cursive;
+}
+
+.choose:hover{
+	background-color: #2B7BF2;
+}
+
+
+		/***************************************
+				Footer
+		***************************************/
+
+footer{
+	width: 100%;
+	clear: both;
+	text-align: center;
+}
+
+#footer-links {
+	width: 90%;
+	margin: 30px auto;
+	list-style: none;
+}
+
+#footer-links a{
+	display: inline-block;
+	margin: 0 25px;
+	text-decoration: underline;
+	color: black;
+}
+
+#footer-links a:hover{
+	color: #0363F0;
+}
+
+#social-icons{
+	text-align: center;
+}
+
+#social-icons img{
+	width: 35px;
+}
