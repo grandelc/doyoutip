@@ -1,0 +1,273 @@
+/***************************************
+		Do You Tip Styles
+September '14
+Authors:
+  ___  _|_      _      ____   _|_ 
+ / __)/ |_)   _| |_   (  _ \ / |_)
+( (_-.\_| \  (_   _)   )(_) )\_| \
+ \___/(_|_/    |_|    (____/ (_|_/©
+INDEX:
+	1.0 General
+	2.0 Fonts
+	3.0 Layout
+		3.1 index
+		3.2 Job Box Layout
+		3.21 Job Box drop down stats & Choose
+	FOOTER	
+
+***************************************/
+
+/***************************************
+	1.0 General --- GROUP NEEDS TO BE ADDED TO #Content
+***************************************/
+
+
+@import url(http://fonts.googleapis.com/css?family=Fugaz+One|Open+Sans:400italic,800italic,700,800,400);
+
+* { 
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+.group:after {                         
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+
+body{
+	/*background-color: #629DF3;*/
+	width: 100%;
+}
+
+#wrapper{
+	width: 90%;
+	margin: auto;
+}
+
+header a {
+	text-decoration: none;
+}
+
+/***************************************
+	2.0 Fonts
+
+font-family: 'Fugaz One', cursive;
+font-family: 'Open Sans', sans-serif;
+
+***************************************/
+
+h1, h2 {
+	font-family: 'Fugaz One', cursive;
+	color: #FFC158;
+}
+
+
+h1 {
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+
+p, ul{
+	font-family: 'Open Sans', sans-serif;
+	
+}
+
+#net{
+	font-size: 43px;
+	color: #0363F0;
+}
+
+.italics{
+	font-style: italic;
+}
+
+a {
+	text-decoration: none;
+}
+
+/***************************************
+	3.0 Layout
+***************************************/
+header{
+	margin:50px 0;
+	border-bottom: 1px solid black;
+	padding-bottom: 15px;
+}
+
+header h1{
+	float: left;
+}
+
+#content h2{
+	margin-bottom: 20px; 
+}
+
+#content > p{
+	line-height: 1.5em;
+	color: black;
+}
+
+
+#content{
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+#col-left, #col-right{
+	width: 50%;
+	margin-bottom: 30px;
+}
+
+#col-left{
+	float: left;
+}
+
+#col-right{
+	float: right;
+}
+
+#button-hdr{
+	float: right;
+height: 50px;
+width: 130px;
+border: 1px solid black;
+border-radius: 5px;
+text-align: center;
+line-height: 50px;
+}
+
+		/***************************************
+				3.1 index layout
+		***************************************/
+#tip-mation{
+	width: 90%;
+	border: 1px solid rgb(236, 236, 236);
+	height: 300px;
+	margin: 30px auto;
+}
+
+
+
+#survey-btn{
+	height: 100px;
+	width: 300px;
+	margin: 50px auto;
+	border-radius: 5px;
+	border: 1px solid black;
+	font-size: 2em;
+	color: black;
+}
+
+#survey-btn:hover, #button-hdr:hover {
+	background-color: rgb(236, 236, 236);
+}
+
+#survey-btn p {
+	text-align: center;
+	height: 100px;
+	line-height: 100px;
+}
+
+		/***************************************
+				3.2 survey layout
+		***************************************/
+#job-slide{
+	border: 1px solid rgb(236, 236, 236);
+	margin: 30px auto;
+}
+
+.job-title {
+	font-size: 3em;
+	font-weight: bold;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.percent{
+	font-size: 2em;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.job-text{
+	text-align: center;
+	margin: 0 50px 30px 50px;
+}
+
+.survey-btn{
+	width: 500px;
+	height: auto;
+	margin: 0 auto 30px auto;
+	/*border: 1px solid purple; /*TEST BORDER*/ 
+}
+
+.doTip{
+	float: left;
+}
+
+.dontTip{
+	float: right;
+}
+
+.doTip, .dontTip {
+	border: 1px solid rgb(236, 236, 236);
+	width: 200px;
+	height: 100px;
+	margin: 10px;
+	text-align: center;
+	line-height: 100px;
+	cursor: pointer;
+}
+
+.doTip:hover, .dontTip:hover{
+	background-color: rgb(236, 236, 236);
+} 
+		
+
+		/***************************************
+				Footer
+		***************************************/
+
+footer{
+	width: 100%;
+	clear: both;
+	text-align: center;
+}
+
+#footer-links {
+	width: 90%;
+	margin: 30px auto;
+	list-style: none;
+}
+
+#footer-links a{
+	display: inline-block;
+	margin: 0 25px;
+	text-decoration: underline;
+	color: black;
+}
+
+#footer-links a:hover{
+	color: #0363F0;
+}
+
+#social-icons{
+	text-align: center;
+}
+
+#social-icons img{
+	width: 35px;
+}
