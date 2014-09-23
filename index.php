@@ -17,7 +17,7 @@
 	<head>
 	  <meta charset="utf-8">
 
-	  <title>Do You Tip ?</title>
+	  <title>Do You Tip Test?</title>
 	  <meta name="description" content="Do You Tip? ">
 	  <meta name="author" content="DylanKeenas">
 
