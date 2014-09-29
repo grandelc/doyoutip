@@ -1,146 +1,205 @@
 <?php
-	// // A required php to connect to the database
- //  	require './require/config.php';
- //  	require './require/database.php';
 
-	// // A query that retrieves only 5 of the 
-	// // most recent data from the database
-	// $tip = find_all_tip();
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
 
-	// //print_r($tip);
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
+	
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
 
-?>
+		default:
+			exit('The application environment is not set correctly.');
+	}
+}
 
-<!doctype html>
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = 'system';
 
-<html lang="en">
-	<head>
-	  <meta charset="utf-8">
-	  <title>Vote On The Services you Tip | Do You Tip ?</title>
-	  <meta name="description" content="Do You Tip? ">
-	  <meta name="author" content="DylanKeenas">
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = 'application';
 
-	  <link rel="stylesheet" href="css/reset.css"> 
-	  <link rel="stylesheet" href="css/styles.css">
-	  <link rel="stylesheet" href="css/responsive.css"> 
-	  <link href='http://fonts.googleapis.com/css?family=Exo+2:400,900,800,600,300,400italic|Maven+Pro:400,700' rel='stylesheet' type='text/css'>
-	  <link rel="icon" type="image/png" href="icon.ico">
-	  <!--[if lt IE 9]>
-	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	  <![endif]-->
-	</head>
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
 
-	<body>
-<!-- 	
-		<?php if ($tip && $tip->num_rows > 0): ?>
-			<?php while ($row = $tip->fetch_assoc()): ?>
-				<?= $row['yes'] ?>
-				<?= $row['no'] ?>
-			<?php endwhile; ?>
-		<?php else: ?>
-			<p>There are no tips :(</p>
-		<?php endif; ?>
- -->
-		<!-- WRAPPER START -->
-		<div id="wrapper"> 
+	// The controller class file name.  Example:  Mycontroller
+	// $routing['controller'] = '';
 
-			<header class = "group">
-				<a href="index.php"><h1>Do You Tip? <span id = "net">.net</span></h1></a>
-				<a href="survey.php">
-					<div id="button-hdr">
-						<p>Take Survey</p>
-					</div>
-				</a>
-			</header>
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
 
-			<div id="content">
-				
-			<h2>Do You Tip These Service People?</h2>
-			<p>Some call them the grunuts and the unsung heros. Others say it's their job and they get paid to do it. Click on a service title below and let your opinion be known if they should be tipped or not!</p>
 
-				<div id="tip-mation">
-					
-					ANIMATION BOX	
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
 
-				</div>
-				<div class="info-boxes group">
-					
-					<div class="col-left">
 
-						<div class="info">
-							<img src="img/safe17.png">
-							<h3>No Personal Information</h3>
-							<p>Lorem ipsum dolor sit amet, te option indoctum moderatius cum, vis debet mundi ut. Regione insolens ocurreret quo ne, cotidieque intellegebat in mel, brute dicta epicurei per ea. An nostro accusata duo, in cum dicta populo oblique. Posse nullam consulatu id eum, in est aeterno perfecto, lucilius abhorreant sed ei.</p>
-						</div>
 
-						<div class="info">
-							<img src="img/man318.png">
-							<h3>Simple Yes or No Questions</h3>
-							<p>Lorem ipsum dolor sit amet, te option indoctum moderatius cum, vis debet mundi ut. Regione insolens ocurreret quo ne, cotidieque intellegebat in mel, brute dicta epicurei per ea. An nostro accusata duo, in cum dicta populo oblique. Posse nullam consulatu id eum, in est aeterno perfecto, lucilius abhorreant sed ei.</p>
-						</div>
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
 
-						<div class="info">
-							<img src="img/donation.png">
-							<h3>Help Us By Donateing</h3>
-							<p>Lorem ipsum dolor sit amet, te option indoctum moderatius cum, vis debet mundi ut. Regione insolens ocurreret quo ne, cotidieque intellegebat in mel, brute dicta epicurei per ea. An nostro accusata duo, in cum dicta populo oblique. Posse nullam consulatu id eum, in est aeterno perfecto, lucilius abhorreant sed ei.</p>
-						</div>
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
 
-					</div>
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
 
-					<div class="col-right">
-						
-						<div class="info">
-							<img src="img/free7.png">
-							<h3>Totally Free</h3>
-							<p>Lorem ipsum dolor sit amet, te option indoctum moderatius cum, vis debet mundi ut. Regione insolens ocurreret quo ne, cotidieque intellegebat in mel, brute dicta epicurei per ea. An nostro accusata duo, in cum dicta populo oblique. Posse nullam consulatu id eum, in est aeterno perfecto, lucilius abhorreant sed ei.</p>
-						</div>
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
 
-						<div class="info">
-							<img src="img/idea2.png">
-							<h3>Suggest New Service People</h3>
-							<p>Lorem ipsum dolor sit amet, te option indoctum moderatius cum, vis debet mundi ut. Regione insolens ocurreret quo ne, cotidieque intellegebat in mel, brute dicta epicurei per ea. An nostro accusata duo, in cum dicta populo oblique. Posse nullam consulatu id eum, in est aeterno perfecto, lucilius abhorreant sed ei.</p>
-						</div>
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
 
-						<div class="info">
-							<img src="img/two210.png">
-							<h3>Share With Your Friends!</h3>
-							<p>Lorem ipsum dolor sit amet, te option indoctum moderatius cum, vis debet mundi ut. Regione insolens ocurreret quo ne, cotidieque intellegebat in mel, brute dicta epicurei per ea. An nostro accusata duo, in cum dicta populo oblique. Posse nullam consulatu id eum, in est aeterno perfecto, lucilius abhorreant sed ei.</p>
-						</div>
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
 
-					</div>
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
 
-				</div>
+	// The PHP file extension
+	// this global constant is deprecated.
+	define('EXT', '.php');
 
-				<div id="survey-btn">
-					<a href="survey.php">
-						<p>Take Survey</p>
-					</a>
-				</div>
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
 
-					
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
 
-			</div>	
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
 
-			<footer>
-			<ul id="footer-links">
-				<a href="about.php"><li>About</li></a>
-				<a href="donate.php"><li>Donate</li></a>
-				<a href="submit.php"><li>Submit Service Job</li></a>
-				<a href="contact.php"><li>Contact</li></a>
-			</ul>
-			<div id="s-link-list">
-			 <div id="social-icons">
-				 	<a href="#"><img src="img/facebook.png" alt="facebook"></a>
-				 	<a href="#"><img src="img/twitter.png" alt="twitter"></a>
-				 	<a href="#"><img src="img/googleplus.png" alt="google plus"></a>
-			 </div>
-			 </div>
 
-		</footer>
-		</div> <!-- WRAPPER END -->
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
 
-		
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="magic.js" type="text/javascript"></script>
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
 
-	</body>
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter.php';
+
+/* End of file index.php */
+/* Location: ./index.php */

@@ -64,7 +64,7 @@ font-family: 'Open Sans', sans-serif;
 
 ***************************************/
 
-h1, h2 {
+h1, h2, h3, h4 {
 	font-family: 'Fugaz One', cursive;
 	color: #FFC158;
 }
@@ -78,6 +78,9 @@ h2 {
 	font-size: 2em;
 }
 
+h3{
+	font-size: 1.5em;
+}
 
 p, ul{
 	font-family: 'Open Sans', sans-serif;
@@ -172,13 +175,45 @@ line-height: 50px;
 }
 
 #survey-btn:hover, #button-hdr:hover {
-	background-color: rgb(236, 236, 236);
+	background-color: #FFC158;
 }
 
 #survey-btn p {
 	text-align: center;
 	height: 100px;
 	line-height: 100px;
+}
+
+.info-boxes{
+	width: 90%;
+	margin: 0 auto;
+
+}
+
+.col-left, .col-right{
+	width: 45%; 
+}
+
+.col-left{
+	float: left;
+}
+
+.col-right{
+	float: right;
+}
+.info{
+	padding: 20px;
+	height: 100px;
+	margin: 75px auto;
+}
+
+.info img{
+	float: left;
+	margin-right: 10px;
+}
+
+.info p {
+	margin-top: 20px;
 }
 
 		/***************************************
@@ -194,12 +229,14 @@ line-height: 50px;
 	font-weight: bold;
 	margin: 30px auto;
 	text-align: center;
+	color: #0363F0;
 }
 
 .percent{
 	font-size: 2em;
 	text-align: center;
 	margin-bottom: 30px;
+	color: #FFC158;
 }
 
 .job-text{
@@ -218,8 +255,16 @@ line-height: 50px;
 	float: left;
 }
 
+.doTip:hover{
+	background-color: #87DB87;
+}
+
 .dontTip{
 	float: right;
+}
+
+.dontTip:hover{
+	background-color: #F87F7F;
 }
 
 .doTip, .dontTip {
@@ -230,12 +275,62 @@ line-height: 50px;
 	text-align: center;
 	line-height: 100px;
 	cursor: pointer;
+	font-size: 1.5em;
+	text-decoration: none;
 }
 
-.doTip:hover, .dontTip:hover{
-	background-color: rgb(236, 236, 236);
-} 
+.doTip, .dontTip a, a:visited, a:hover, a:active{
+	color: inherit;
+}
+
+.share-modal{
+	display: none;
+	width: 500px;
+	height: 130px;
+	border: 1px solid black;
+	background-color: white;
+	position: absolute;
+	position: fixed;
+	text-align: center;
+}
+.share-modal h3{
+	margin-top: 10px;
+}
+
+.share-modal img{
+	width: 50px;
+	margin-top: 30px;
+}
+
+#close{
+	position: absolute;
+	left: 467px;
+	top: 0px;
+	padding: 10px;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	cursor: pointer;
+}
+
+#close:hover{
+	background-color: #FFC158;
+}
 		
+/***************************************
+		4 About Page
+***************************************/
+#pages-cont{
+	width: 70%;	
+	margin: 10px auto 10px auto;
+	background-color: rgba(236, 236, 236, 0.3);
+	padding: 20px;
+	border-radius: 5px;
+}
+
+#pages-cont h3{
+	margin-bottom: 20px;
+}
+
 
 		/***************************************
 				Footer
@@ -261,7 +356,7 @@ footer{
 }
 
 #footer-links a:hover{
-	color: #0363F0;
+	color: #F0AC37;
 }
 
 #social-icons{
