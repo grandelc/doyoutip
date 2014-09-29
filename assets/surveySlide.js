@@ -17,19 +17,5 @@ $(document).ready(function() {
     owl.trigger('owl.next');
   })
 
-
-
-$( "#survey-share" ).click(function() {
-  $( ".share-modal" ).slideDown('slow',function() {
-    // Animation complete.
-  });
-});
-
-$( "#close" ).click(function() {
-  $( ".share-modal" ).slideUp('slow',function() {
-    // Animation complete.
-  });
-});
-
  
 });
