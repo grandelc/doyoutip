@@ -30,6 +30,8 @@ class Service extends CI_Controller {
 		foreach($jobs as $job){
 			$services[] = array(
 				$job->job_title,
+				anchor('service/view/' . $job->id, "View") . " | " .
+				anchor("service/delete/" . $job->id, "Delete"),
 			);
 		}
 
@@ -41,6 +43,7 @@ class Service extends CI_Controller {
 	* Adds a Job
 	*/
 	public function add(){
+		
 		$this->load->model("Job");
 
 		$this->load->helper("url");
@@ -61,6 +64,7 @@ class Service extends CI_Controller {
 				'rules' => 'required',
 			)
 		));
+
 		$this->form_validation->set_error_delimiters("<div class='alert alert-error'>", "</div>");
 		if (!$this->form_validation->run()){
 
@@ -81,6 +85,24 @@ class Service extends CI_Controller {
 			));
 		}
 
+	}
+
+	/**
+	* Deletes a Job
+	*/
+	public function delete($id){
+		$this->load->model(array('Job'));
+		$job = new Job();
+		$job->load($id);
+
+		if(!$job->id) {
+			show_404();
+		}
+
+		$job->delete();
+		$this->load->view('job_deleted', array(
+			'id' => $id,
+		));
 	}
 }
 

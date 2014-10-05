@@ -2,5 +2,5 @@
 
 <h2>Jobs</h2>
 
-<?php $this->table->set_heading("Job Title");
+<?php $this->table->set_heading("Job Title", "Actions");
 echo $this->table->generate($services);

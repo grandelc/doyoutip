@@ -1,0 +1,1 @@
+Job was succesfully deleted!

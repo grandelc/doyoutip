@@ -8,9 +8,9 @@
 			</ul>
 			<div id="s-link-list">
 				 <div id="social-icons">
-	<!-- 			 	<a href="#"><img src="img/facebook.png" alt="facebook"></a>
-					 	<a href="#"><img src="img/twitter.png" alt="twitter"></a>
-					 	<a href="#"><img src="img/googleplus.png" alt="google plus"></a> -->
+  						<a href=""><img class ="share-links" src="<?php echo base_url() . 'assets/img/facebook.png' ?>" alt="facebook"></a>
+  						<a href=""><img class ="share-links" src="<?php echo base_url() . 'assets/img/twitter.png' ?>" alt="twitter"></a>
+  						<a href=""><img class ="share-links" src="<?php echo base_url() . 'assets/img/googleplus.png' ?>" alt="google plus"></a>
 				 </div>
 			</div>
 

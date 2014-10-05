@@ -9,7 +9,7 @@
 		* Unique identifier for the Tip table
 		* @var int
 		*/
-		public $tip_id;
+		public $id;
 
 		/**
 		* The forein key to the Job table
